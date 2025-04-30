@@ -2,11 +2,14 @@ public class Book {
     private String title;
     private String author;
     private boolean isAvailable;
+    private static int idCounter = 1;
+    private final int id;
 
     public Book(String title, String author) {
         this.title = title;
         this.author = author;
         this.isAvailable = true;
+        this.id = idCounter++;
     }
 
     public String getTitle() {
@@ -25,8 +28,13 @@ public class Book {
         isAvailable = available;
     }
 
+    public int getId() { return id; }
+
     @Override
     public String toString() {
-        return "\"" + title + "\" by " + author + (isAvailable ? " [Available]" : " [Taken]");
+        return "ID: " + id +
+           " | Название: " + title +
+           " | Автор: " + author +
+           " | Статус: " + (isAvailable ? "Доступна" : "Занята");
     }
 }

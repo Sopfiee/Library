@@ -17,7 +17,7 @@ public class Library {
         System.out.println("Available books:");
         for (Book book : books) {
             if (book.isAvailable()) {
-                System.out.println("- " + book);
+                System.out.println(book);
             }
         }
     }
@@ -30,4 +30,19 @@ public class Library {
         }
         return null;
     }
+
+    public void listAllBooks() {
+        if (books.isEmpty()) {
+            System.out.println("Библиотека пуста.");
+            return;
+        }
+        else {
+            System.out.println("All books:");
+            for (Book book : books) {
+                String status = book.isAvailable() ? "Доступна" : "Занята";
+                System.out.println("ID: " + book.getId() + " | Название: " + book.getTitle() + " | Автор: " + book.getAuthor() + " | Статус: " + status);
+            }
+        }
+    }
+
 }

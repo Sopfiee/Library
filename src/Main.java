@@ -64,5 +64,6 @@ public class Main {
 
         // После возврата
         library.showAvailableBooks();
+        library.listAllBooks();
     }
 }
