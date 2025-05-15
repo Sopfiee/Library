@@ -31,9 +31,19 @@
     Дать пользователям взять и вернуть книги.
     Вывести доступные книги до и после операций.
  */
+package com.example.ui;
+
+import com.example.core.Library;
+import com.example.core.Book;
+import com.example.core.User;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
+    private static final Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
+        logger.info("Program started!");
         Library library = new Library();
         library.addBook(new Book("1984", "George Orwell"));
         library.addBook(new Book("To Kill a Mockingbird", "Harper Lee"));

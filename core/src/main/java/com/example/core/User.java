@@ -1,3 +1,5 @@
+package com.example.core;
+
 public class User {
     private String name;
     private Book borrowedBook;
