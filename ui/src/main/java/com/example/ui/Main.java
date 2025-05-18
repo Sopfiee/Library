@@ -52,6 +52,7 @@ public class Main {
         // Создание пользователей
         User alice = new User("Alice");
         User bob = new User("Bob");
+        User kate = new User("Bob");
 
         // Начальное состояние
         library.showAvailableBooks();
@@ -61,6 +62,7 @@ public class Main {
         alice.borrowBook(library.findBookByTitle("1984"));
         bob.borrowBook(library.findBookByTitle("1984")); // уже взята
         bob.borrowBook(library.findBookByTitle("The Hobbit"));
+        kate.borrowBook(library.findBookByTitle("To Kill a Mockingbird"));
         System.out.println();
 
         // После взятия книг
@@ -74,6 +76,7 @@ public class Main {
 
         // После возврата
         library.showAvailableBooks();
+        library.removeBook("The Hobbit");
         library.listAllBooks();
     }
 }

@@ -14,12 +14,21 @@ public class Library {
         books.add(book);
     }
 
+    public boolean removeBook(String title) {
+        return books.removeIf(book -> book.getTitle().equals(title));
+    }
+
     public void showAvailableBooks() {
+        boolean any = false;
         System.out.println("Available books:");
         for (Book book : books) {
             if (book.isAvailable()) {
                 System.out.println(book);
+                any = true;
             }
+        }
+        if (!any) {
+            System.out.println("Нет доступных книг");
         }
     }
 
