@@ -35,4 +35,8 @@ public class User {
     public String toString() {
         return name + (borrowedBook != null ? " (has: " + borrowedBook.getTitle() + ")" : " (no books)");
     }
+
+    public Book getBorrowedBook() {
+        return borrowedBook;
+    }
 }
