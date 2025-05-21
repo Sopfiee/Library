@@ -47,7 +47,7 @@ pipeline {
 
         stage('Copy artifact') {
             steps {
-                bat 'copy target\\result.jar C:\\lib_jenkins'
+                bat 'copy ui\\target\\ui-1.0-jar-with-dependencies.jar C:\\lib_jenkins'
             }
         }
     }
