@@ -35,7 +35,7 @@ pipeline {
 
         stage('Coverage') {
             steps {
-                bat 'mvn jacoco:prepare-agent test jacoco:report'
+                bat 'mvn -pl core clean test jacoco:report'
             }
         }
 
