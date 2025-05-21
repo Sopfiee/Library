@@ -31,9 +31,19 @@
     Дать пользователям взять и вернуть книги.
     Вывести доступные книги до и после операций.
  */
+package com.example.ui;
+
+import com.example.core.Library;
+import com.example.core.Book;
+import com.example.core.User;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
+    private static final Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
+        logger.info("Program started!");
         Library library = new Library();
         library.addBook(new Book("1984", "George Orwell"));
         library.addBook(new Book("To Kill a Mockingbird", "Harper Lee"));
@@ -42,6 +52,7 @@ public class Main {
         // Создание пользователей
         User alice = new User("Alice");
         User bob = new User("Bob");
+        User kate = new User("Bob");
 
         // Начальное состояние
         library.showAvailableBooks();
@@ -51,6 +62,7 @@ public class Main {
         alice.borrowBook(library.findBookByTitle("1984"));
         bob.borrowBook(library.findBookByTitle("1984")); // уже взята
         bob.borrowBook(library.findBookByTitle("The Hobbit"));
+        kate.borrowBook(library.findBookByTitle("To Kill a Mockingbird"));
         System.out.println();
 
         // После взятия книг
@@ -64,5 +76,7 @@ public class Main {
 
         // После возврата
         library.showAvailableBooks();
+        library.removeBook("The Hobbit");
+        library.listAllBooks();
     }
 }

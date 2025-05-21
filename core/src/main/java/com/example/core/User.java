@@ -1,3 +1,5 @@
+package com.example.core;
+
 public class User {
     private String name;
     private Book borrowedBook;
@@ -32,5 +34,9 @@ public class User {
     @Override
     public String toString() {
         return name + (borrowedBook != null ? " (has: " + borrowedBook.getTitle() + ")" : " (no books)");
+    }
+
+    public Book getBorrowedBook() {
+        return borrowedBook;
     }
 }
