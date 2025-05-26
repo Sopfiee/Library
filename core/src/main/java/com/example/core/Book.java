@@ -33,8 +33,8 @@ public class Book {
     /**
      * Конструктор для создания новой книги.
      *
-     * @param title_  Название книги.
-     * @param author_ Автор книги.
+     * @param titleParam  Название книги.
+     * @param authorParam Автор книги.
      */
     public Book(final String titleParam, final String authorParam) {
         this.title = titleParam;
@@ -73,7 +73,7 @@ public class Book {
     /**
      * Устанавливает статус доступности книги.
      *
-     * @param available_ новый статус доступности.
+     * @param availableParam новый статус доступности.
      */
     public void setAvailable(final boolean availableParam) {
         isAvailable = availableParam;
@@ -84,8 +84,8 @@ public class Book {
      *
      * @return идентификатор книги.
      */
-    public int getId() { 
-        return id; 
+    public int getId() {
+        return id;
     }
 
     /**

@@ -45,7 +45,8 @@ public class Library {
      * Удаляет книгу из библиотеки по её названию.
      *
      * @param titleParam название книги, которую нужно удалить
-     * @return {@code true}, если книга была найдена и удалена, иначе {@code false}
+     * @return {@code true}, если книга была найдена и удалена, 
+     * иначе {@code false}
      */
     public boolean removeBook(final String titleParam) {
         return books.removeIf(book -> book.getTitle().equals(titleParam));
@@ -91,8 +92,7 @@ public class Library {
     public void listAllBooks() {
         if (books.isEmpty()) {
             System.out.println("Библиотека пуста.");
-        }
-        else {
+        } else {
             System.out.println("All books:");
             for (Book book : books) {
                 String status = book.isAvailable() ? "Доступна" : "Занята";
