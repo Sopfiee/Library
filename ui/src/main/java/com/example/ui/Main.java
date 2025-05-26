@@ -1,6 +1,6 @@
 /*
                             Система управления библиотекой
-Создать мини-систему для учёта книг и пользователей библиотеки. 
+Создать мини-систему для учёта книг и пользователей библиотеки.
 Реализовать 3 класса:
 1. Класс Book - представляет книгу в библиотеке.
     Поля:
@@ -44,12 +44,21 @@ import org.apache.logging.log4j.Logger;
 public class Main {
 
     /**
+     * Main для анализатора.
+     */
+    private Main() {
+        // пустой
+    }
+
+    /**
      * Переменная для логгера.
      */
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
-    
+
     /**
      * Интерфейс программы.
+     * 
+     * @param args массив аргументов командной строки.
      */
     public static void main(final String[] args) {
         LOGGER.info("Program started!");
