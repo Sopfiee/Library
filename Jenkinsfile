@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'https://github.com/your-user/your-repo.git'
+        REPO_URL = 'https://github.com/Sopfiee/Library'
     }
 
     stages {
