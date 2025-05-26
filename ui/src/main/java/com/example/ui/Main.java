@@ -41,7 +41,7 @@ import com.example.core.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Main {
+public final class Main {
 
     /**
      * Main для анализатора.
@@ -57,7 +57,7 @@ public class Main {
 
     /**
      * Интерфейс программы.
-     * 
+     *
      * @param args массив аргументов командной строки.
      */
     public static void main(final String[] args) {
