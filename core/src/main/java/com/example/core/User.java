@@ -20,10 +20,10 @@ public class User {
     /**
      * Создает пользователя с заданным именем.
      *
-     * @param name имя пользователя
+     * @param nameParam имя пользователя
      */
-    public User(String name) {
-        this.name = name;
+    public User(final String nameParam) {
+        this.name = nameParam;
         this.borrowedBook = null;
     }
 
@@ -33,7 +33,7 @@ public class User {
      *
      * @param book книга для взятия взаймы
      */
-    public void borrowBook(Book book) {
+    public void borrowBook(final Book book) {
         if (borrowedBook != null) {
             System.out.println(name + " already has a borrowed book.");
         } else if (book.isAvailable()) {

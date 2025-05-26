@@ -45,7 +45,7 @@ public class Library {
      * Удаляет книгу из библиотеки по её названию.
      *
      * @param titleParam название книги, которую нужно удалить
-     * @return {@code true}, если книга была найдена и удалена, 
+     * @return {@code true}, если книга была найдена и удалена,
      * иначе {@code false}
      */
     public boolean removeBook(final String titleParam) {
