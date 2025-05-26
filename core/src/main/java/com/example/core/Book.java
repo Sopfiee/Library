@@ -5,7 +5,14 @@ package com.example.core;
  */
 public class Book {
 
+    /**
+     * Название книги.
+     */
     private final String title;
+
+    /**
+     * Автор книги.
+     */
     private final String author;
 
     /**
@@ -29,9 +36,9 @@ public class Book {
      * @param title_  Название книги.
      * @param author_ Автор книги.
      */
-    public Book(String title_, String author_) {
-        this.title = title_;
-        this.author = author_;
+    public Book(final String titleParam, final String authorParam) {
+        this.title = titleParam;
+        this.author = authorParam;
         this.isAvailable = true;
         this.id = idCounter++;
     }
@@ -68,8 +75,8 @@ public class Book {
      *
      * @param available_ новый статус доступности.
      */
-    public void setAvailable(boolean available_) {
-        isAvailable = available_;
+    public void setAvailable(final boolean availableParam) {
+        isAvailable = availableParam;
     }
 
     /**
@@ -77,7 +84,9 @@ public class Book {
      *
      * @return идентификатор книги.
      */
-    public int getId() { return id; }
+    public int getId() { 
+        return id; 
+    }
 
     /**
      * Возвращает строковое представление книги.
@@ -86,9 +95,9 @@ public class Book {
      */
     @Override
     public String toString() {
-        return "ID: " + id 
-            + " | Название: " + title 
-            + " | Автор: " + author 
+        return "ID: " + id
+            + " | Название: " + title
+            + " | Автор: " + author
             + " | Статус: " + (isAvailable ? "Доступна" : "Занята");
     }
 }
