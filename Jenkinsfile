@@ -14,28 +14,58 @@ pipeline {
                 bat 'mvn clean compile'
             }
         }
-
-        stage('Test') {
-            when {
-                branch pattern: "feature/.*", comparator: "REGEXP"
-            }
+        
+        stage('Checkout feature/4') {
             steps {
-                bat 'mvn test'
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/feature/4']],
+                    userRemoteConfigs: [[
+                        url: "${REPO_URL}"
+                    ]]
+                ])
             }
         }
 
-        stage('Static Analysis') {
-            when {
-                branch 'dev'
-            }
+        stage('Test') {
             steps {
-                bat 'mvn checkstyle:check'
+                bat 'mvn test'
             }
         }
 
         stage('Coverage') {
             steps {
                 bat 'mvn -pl core clean test jacoco:report'
+            }
+        }
+
+        stage('Checkout develop') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/develop']],
+                    userRemoteConfigs: [[
+                        url: "${REPO_URL}"
+                    ]]
+                ])
+            }
+        }
+
+        stage('Static Analysis') {
+            steps {
+                bat 'mvn checkstyle:check'
+            }
+        }
+
+        stage('Checkout master') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    userRemoteConfigs: [[
+                        url: "${REPO_URL}"
+                    ]]
+                ])
             }
         }
 
