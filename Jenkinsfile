@@ -41,6 +41,15 @@ pipeline {
             steps {
                 bat 'mvn -pl core clean test jacoco:report'
             }
+
+            post {
+                always {
+                    jacoco(execPattern: 'core/target/jacoco.exec')
+                }
+                failure {
+                    echo 'Сборка провалена или недостаточное покрытие!'
+                }
+            }
         }
 
         stage('Checkout develop') {
